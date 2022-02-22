@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Axel Fernandes-Spencer">
+    <meta name="description" content="Javascript Pay Calculator">
+
+    <title>Pay Calculator</title>
+</head>
+<body>
+    
+    <img src="images/learningCSS.jpg" alt="Funny meme">
+
+    <script>
+
+        var hourlyPay = Number(prompt(`How much do you get payed an hour? `))
+        var hours = Number(prompt(`How many hours do you work in a week? `))
+
+        var grossPay = (hourlyPay * hours) * 2
+        var usShare = grossPay * .20
+        var netPay = grossPay - usShare
+
+        console.log(`Gross Pay: $${grossPay.toFixed(2)}`)
+        console.log(`Uncle Sam's Share: $${usShare.toFixed(2)}`)
+        console.log(`Net Pay: $${netPay.toFixed(2)}`)
+
+        alert(`*Your Gross Pay, Uncle Sam's share, and Net Pay have all been calculated over a two-week period*`)
+
+    </script>
+
+</body>
