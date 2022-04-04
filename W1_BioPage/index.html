@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bio Page</title>
+    <style>
+
+        .center {
+            text-align:center;
+        }
+
+        h1 {
+            background-color: rgb(146, 0, 0);
+            margin-bottom:10px;
+            padding: 5px;
+            color: white
+        }
+
+        body {
+            background-color: rgb(255, 238, 207);
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .hide
+        {
+            visibility:hidden;
+        }
+
+        .colort {
+            color:rgb(146, 0, 0);
+        }
+
+        .border {
+            border:5px solid black
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="center">Axel Fernandes-Spencer</h1>
+    <hr>
+
+    <div id="nav" class="center">
+        <a href="#">Home</a>
+        <a href="#">Bio</a>
+        <a href="#">Education</a>
+        <a href="#">Hobbies</a>
+        <hr>
+
+    </div><!--/nav-->
+
+    <div id="main">
+
+        <div id="bio">
+
+            <h2 class="colort">My Bio</h2>
+            <p>Hello my name is <b>Axel</b>. I am 18 years old and live in Pawtucket, Rhode Island. I, along with my family, are all from a small archepelago nation called Cape Verde.</p>
+            <p>I am a first year, 3rd term student at New England Institute of Technology. I major in Software Engeneering and I am currently trying to pusue my associates degree.</p>
+            <hr>
+
+        </div><!--/bio-->
+
+        <div id="ed">
+
+            <h2 class="colort">Schooling</h2>
+            <ul>
+                <li><a href="https://www.neit.edu/?abgrp=a&ctcampaign=7833&ctkwd=new%20england%20institute%20of%20technology&ctcreative=527788756701&ctplacement&ctadpos&ctmatch=b&ctlocid=9002213&cttrgtid=kwd-20069821&ctfeedid&ctnwk=g&ctdevice=c&gclid=CjwKCAjwi6WSBhA-EiwA6Niok4cmYq7xes9zNd1VKyrJ-AqKL4YV_YC3ezBE3JYGMQP48n_4q49TixoCOpMQAvD_BwE">New England Institute of Technology(<i>NEIT</i>)</a></li>
+                <li>William E. Tolman High School</li>
+                <li>Joseph Jenks Middle School</li>
+            </ul>
+            <hr>
+
+        </div><!--/ed-->
+
+        <div id="hobbies">
+
+            <h2 class="colort">Hobbies</h2>
+            <ol>
+                <li>Anime</li>
+                <li>Manga</li>
+                <li>Drawing</li>
+                
+            </ol>
+            <img class="border" src="images/Chainsaw.jpg" alt="ChainsawMan Manga Cover" width="250">
+            <hr>
+
+        </div><!--/hobbies-->
+
+    </div><!--/main-->
+
+    <div id="footer">
+
+        <p>&copy;2022, Axel Fernandes-Spencer | W1 Assignment</p>
+
+    </div><!--/footer-->
+    
+    <script>
+        
+        var links = document.querySelectorAll(`a`)
+        var div = document.querySelectorAll(`div`)
+
+        links[1].addEventListener(`click`, (e)=>{
+            e.preventDefault();
+            div[2].classList.remove(`hide`);
+            div[3].classList.add(`hide`);
+            div[4].classList.add(`hide`);
+        })
+
+        links[2].addEventListener(`click`, (e)=>{
+            e.preventDefault();
+            div[2].classList.add(`hide`);
+            div[3].classList.remove(`hide`);
+            div[4].classList.add(`hide`);
+        })
+
+        links[3].addEventListener(`click`, (e)=>{
+            e.preventDefault();
+            div[2].classList.add(`hide`);
+            div[3].classList.add(`hide`);
+            div[4].classList.remove(`hide`);
+        })
+
+        links[0].addEventListener(`click`, (e)=>{
+            e.preventDefault();
+            div[2].classList.remove(`hide`);
+            div[3].classList.remove(`hide`);
+            div[4].classList.remove(`hide`);
+        })
+
+    </script>
+</body>
+</html>
