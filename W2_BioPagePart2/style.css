@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.center {
+    text-align:center;
+}
+
+h1 {
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    padding: 5px;
+    color: white;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    margin-left: 200px;
+    margin-right: 200px;
+}
+html {
+    background-image: url('images/halftone-background-with-circles_23-2148907689.webp');
+    font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.hide {
+    visibility:hidden;
+}
+
+.colort {
+    color:rgb(146, 0, 0);
+}
+
+.border {
+    border:5px solid black;
+}
+
+#footer {
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+a {
+    color: rgb(38, 0, 162);
+}
+
+a:hover {
+    color:rgb(255, 0, 212);
+}
+
+div {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+    border-radius: 25px;
+    background: rgb(38, 0, 162);
+    padding: 10px;
+    width: 200px;
+    height: 150px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: rgb(255, 0, 212);
+    color:rgb(255, 255, 255)
+}
+
+#hobbies, #ed, #bio {
+    border-top:3px solid black;
+    padding: 20px;
+    background-color: white;
+}
+
