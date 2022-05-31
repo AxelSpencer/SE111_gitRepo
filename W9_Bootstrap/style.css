@@ -1,0 +1,29 @@
+@media (max-width: 1920px) 
+{
+    main 
+    {
+        width: 70%;
+        transition: all 1s;
+    }
+}
+
+@media (max-width: 500px)
+{
+    main
+    {
+        width: 100%;
+        transition: all 1s;
+    }
+}
+
+
+html, body{
+    margin:0;
+    height:100vh;
+}
+
+body {
+    
+    display: flex;
+    justify-content: center;
+}
