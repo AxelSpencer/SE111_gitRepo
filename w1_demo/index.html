@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        fetch('https://www.fishwatch.gov/api/species')
+        .then(function(response){return response.json()})
+        .then(function(data)
+        {
+
+            console.log(data)
+            var body = document.querySelector(`body`);
+            var msg = ``
+
+            for(let i=0; i<data.length; i++)
+            {
+                for(index in data[i])
+                {
+                    if(data[i][index] != null && typeof data[i][index] == `string`)
+                    msg += `${data[i][index]}<br>`
+                }
+
+                msg += `<img src="${data[i][`Species Illustration Photo`][`src`]}">`
+
+                body.innerHTML = msg
+            }
+
+        });
+    </script>
+</body>
+</html>
