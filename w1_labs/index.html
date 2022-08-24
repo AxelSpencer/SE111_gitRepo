@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W1 Labs</title>
+</head>
+<body>
+
+    <script>
+        //---------------------W1 Variables---------------------
+        
+        console.log(`---------------------W1 Variables---------------------`)
+        
+        var a = ``
+        var b = 0
+        var c = true
+
+        console.log(typeof a)
+        console.log(typeof b)
+        console.log(typeof c)
+
+        //---------------------W1 Functions---------------------
+
+        console.log(`---------------------W1 Functions---------------------`)
+
+        function add(_a, _b)
+        {
+            return _a + _b
+        }
+        var a = 2
+        var b = 5
+        console.log(`${a} + ${b} =`, add(a, b))
+
+        //---------------------W1 Loops and Arrays / Fizz Buzz / objects ---------------------
+
+        console.log(`-----W1 Loops and Arrays / W1 Fizz Buzz / W1 Objects-----`)
+        
+        const array = []
+
+        for(i = 0; i < 100; i++)
+        {
+            array[i] = i + 1
+
+            if (array[i] % 2 === 0 && array[i] % 3 === 0)
+            {
+                array[i] = {index: array[i], label: "fizz buzz" }
+            }
+
+            else if (array[i] % 2 === 0)
+            {
+                array[i] = {index: array[i], label: "fizz" }
+            }
+
+            else if (array[i] % 3 === 0)
+            {
+                array[i] = {index: array[i], label: "buzz" }
+            }
+
+            else 
+            {
+                array[i] = {index: array[i]}
+            }
+        }
+
+        
+        console.log(array)
+
+
+    </script>
+
+</body>
+</html>
