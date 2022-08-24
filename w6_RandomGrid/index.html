@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Grid</title>
+</head>
+<body>
+    <input id="num" type="text" value="" id="num"/>
+    <input type="button" value="Generate Grid" onclick="e()" />
+    <table >
+        <tbody id="grid" >
+
+        </tbody>
+    </table>
+    <div id="avg">
+
+    </div>
+
+
+    <script>
+        
+        function randNum (min, max) 
+        {
+            return Math.floor (Math.random() * (max - min + 1)) + min
+        }
+
+        var grid = document.querySelector('#grid')
+        var avgDiv = document.querySelector('#avg')
+        var str = ""
+
+        function e()
+        {
+            var avg = 0
+            var rand = 0
+            var num = document.getElementById("num")
+            num = Number(num.value)
+
+            for (let i = 0; i < num; i++)
+            {
+                str += "<tr>"
+                
+                for (let index = 0; index < num; index++)
+                {
+                    rand = randNum(1, 100)
+                    avg += rand
+
+                    str += "<th style='border: 2px solid; padding: 5px;"
+                    if (rand % 3 == 0)
+                    {
+                        str += "background-color: red"
+                    }
+
+                    if (rand % 2 == 0)
+                    {
+                        str += "background-color: blue"
+                    }
+
+                    str += "'> " + rand + " </th>";
+                }
+                str += "</tr>"
+            }
+            grid.innerHTML = str;
+            avgDiv.innerHTML = "<p>The average is " + avg/(num * num) + "</p>"
+        }
+
+
+    </script>
+</body>
+</html>
