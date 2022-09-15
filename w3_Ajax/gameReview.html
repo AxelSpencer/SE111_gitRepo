@@ -1,0 +1,107 @@
+
+<html>
+<title>Game Reviews</title>
+<head>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style type='text/css'>
+			.imgframe   { background:black; padding:12px; border:1px solid #999; }
+		</style>
+</head>
+<body>
+
+    
+
+<div class="container">
+	<div class="row">
+		<div class='col-md-8'>
+			<h1>Game Reviews</h1>
+			
+			
+			<table class="table table-striped">
+			<thead>
+			  <tr>
+				<th>Game Title</th>
+				<th>Console</th>
+				<th>Rating</th>
+				<th>Score</th>
+			  </tr>
+			</thead>
+			<tbody id="reviewsBody">
+			   
+			   
+				
+			</tbody>
+		  </table>
+	  </div>
+	 
+	  <div class='col-md-4' style='margin-top:200px;'>
+		<h2 id="gameTitle"></h2>
+			<img id='gameImage'  src=''>
+	  </div>
+	</div>
+</div>
+
+</body>
+</html>
+
+ <script>
+	
+
+	fetch('https://se251-node.herokuapp.com/w3')
+		.then(function(response){return response.json()})
+        .then(function(reviews)
+		{
+			//reviews = JSON.parse(jsonInfoReviews);
+			
+			var tbody = document.querySelector('#reviewsBody')
+			var str=''
+			var imgArray = []
+
+			for (i = 0; i < reviews.length; i++)
+			{
+				str += "<tr>"
+				
+				for(index in reviews[i])
+				{
+					if (index != "imageName" && index != "gameId")
+					{
+						str += "<td>"
+						if (index == "gameTitle")
+						{
+							str += "<a class='reviews' data-img='" + reviews[i]["imageName"] + "'>"
+						}
+
+						str += reviews[i][index]
+
+						if(index == "gameTitle")
+						{
+							str += "</a>"
+						}
+
+						str +=  " </td>"
+					}
+				}
+				str += "</tr>"
+			}
+			tbody.innerHTML = str
+
+			img = document.querySelectorAll(`.reviews`)
+
+			console.log(img)
+
+
+			for(let i = 0; i < img.length; i++)
+			{
+				img[i].addEventListener("click", selectReview)
+			}
+
+			function selectReview()
+			{
+				document.querySelector(`#gameImage`).src = "images/" + this.dataset.img
+				document.querySelector(`#gameTitle`).innerText = this.text
+			}
+		})
+	
+	
+	
+</script>
