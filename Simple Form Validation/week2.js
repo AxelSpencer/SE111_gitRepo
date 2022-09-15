@@ -11,35 +11,39 @@ function e()
     var p = document.querySelectorAll(`p`)
     var spans = document.querySelectorAll(`span`)
     var formCon = document.querySelector(`#confirmation`)
+    
+    var check = true
 
     for(let i=0; i<inputs.length;i++)
     {
         if(inputs[i].value == "")
         {
-            p[i].style.color= 'red'
-            spans[i].innerText = '*'
-            spans[i].style.display = 'inline'
+            p[i].style.color= `red`
+            spans[i].innerText = `*`
+            spans[i].style.display = `inline`
+            check = false
         }
 
         else if(inputs[2].value !== inputs[3].value)
         {
-            p[2].style.color= 'red'
-            spans[2].innerText = '*'
-            spans[2].style.display = 'inline'
+            p[2].style.color= `red`
+            spans[2].innerText = `*`
+            spans[2].style.display = `inline`
 
-            p[3].style.color= 'red'
-            spans[3].innerText = '*'
-            spans[3].style.display = 'inline'
+            p[3].style.color= `red`
+            spans[3].innerText = `*`
+            spans[3].style.display = `inline`
+            check = false
         }
 
         else
         {
-            p[i].style.color = 'black'
-            spans[i].innerText = ''
-            spans[i].style.display = 'inline'
+            p[i].style.color = `black`
+            spans[i].innerText = " "
+            spans[i].style.display = `inline`
         }  
 
-        if ((inputs[2].value === inputs[3].value && inputs[i].value).length > 0)
+        if (check == true)
         {
             formCon.style.display = `block`
             document.querySelector(`#info`).innerText = `${inputs[0].value} ${inputs[1].value}\n
@@ -52,6 +56,4 @@ function e()
             formCon.style.display = `none`
         }
     }
-    
-
 }
