@@ -1,10 +1,3 @@
-var fName = document.querySelector(`#first-name`)
-var lName = document.querySelector(`#last-name`)
-var email = document.querySelector(`#email`)
-var emailCon = document.querySelector(`#emailCon`)
-var phone = document.querySelector(`#phone`)
-
-
 function e()
 {
     var inputs = document.querySelectorAll(`input[type="text"]`)
@@ -37,14 +30,15 @@ function e()
         }
 
         else
-        {
+        { 
             p[i].style.color = `black`
-            spans[i].innerText = " "
+            spans[i].innerText = ""
             spans[i].style.display = `inline`
         }  
 
         if (check == true)
         {
+            document.querySelector(`#form`).style.display = `none`
             formCon.style.display = `block`
             document.querySelector(`#info`).innerText = `${inputs[0].value} ${inputs[1].value}\n
             ${inputs[2].value}\n
@@ -53,7 +47,10 @@ function e()
 
         else
         {
+            document.querySelector(`#form`).style.display = `block`
             formCon.style.display = `none`
         }
     }
+
+    console.log(inputs[0].value)
 }
