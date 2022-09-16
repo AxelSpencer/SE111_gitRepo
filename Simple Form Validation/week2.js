@@ -1,3 +1,9 @@
+var fName = document.querySelector(`#first-name`)
+var lName = document.querySelector(`#last-name`)
+var email = document.querySelector(`#email`)
+var emailCon = document.querySelector(`#emailCon`)
+var phone = document.querySelector(`#phone`)
+
 function e()
 {
     var inputs = document.querySelectorAll(`input[type="text"]`)
